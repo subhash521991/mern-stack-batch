@@ -1,0 +1,73 @@
+//// Using Normel javascript Object
+
+let person = {
+
+    name: "subhash",
+    email: "subhashmauryacse@gmail.com",
+    contact: 8750946046,
+    age: 31,
+    skill: ["html","css","javascript","React","Node"],
+}
+
+/// Using javascript Object within Object
+
+let user = {
+
+user1 : {
+
+    name: "subhash",
+    email: "subhashmauryacse@gmail.com",
+    mobile: 98765432310,
+    age: 32,
+    skill:["html","css","javascript","React","Node"]
+},
+
+user2 : {
+
+    name: "anil",
+    email: "anil@gmail.com",
+    mobile: 98765432312,
+    age: 31,
+    skill:["html","css","javascript","worpress"]
+},
+user3 : {
+
+    name: "vikas",
+    email: "vikas@gmail.com",
+    mobile: 98765432313,
+    age: 30,
+    skill:["html","css","javascript","worpress","typescript"]
+},
+user4 :{
+
+    name: "rohan",
+    email: "rohan@gmail.com",
+    mobile: 98765432315,
+    age: 30,
+    skill:["html","css","javascript","worpress","marketing"]
+}
+
+
+}
+
+/// Create Javascript object using constructor function
+function employee(name,email,contact,age,skill){
+
+    this.name = name,
+    this.email = email,
+    this.contact = contact,
+    this.age = age,
+    this.skill = skill
+
+}
+
+
+let enmployee1 = new employee("subhash","subhashmauryacse@gmail.com",9876543210,32,["htmk","css","javascript","react"]);
+
+
+console.log("1: Display skill using (normal object access) =  " + person.skill[2]);
+console.log("2: Display skill using (object within object access) =  " + user.user1.skill[3]);
+console.log("3: Display skill using (object constructor function) =  " + enmployee1.skill[3]);
+
+
+
