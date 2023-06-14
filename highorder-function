@@ -1,5 +1,7 @@
-let num1;
-let num2;
+//// Higher Order Function Example
+
+let num1 = 40;
+let num2= 20;
 
 function add(num1, num2) {
 
@@ -25,16 +27,54 @@ function div(num1, num2) {
 
 }
 
+///Higher Order Function
+
 function calculator(num1, num2, operator) {
 
 
     return operator(num1, num2);
 
+}
+
+console.log(calculator(num1, num2, add));
+//console.log(calculator(num1, num2, sub));
+//console.log(calculator(num1, num2, multi));
+//console.log(calculator(num1, num2, div));
+
+
+const redius = [1,2,3];
+
+// logic to clculate area
+
+function area(redius){
+
+    return Math.PI * redius * redius;
 
 
 }
 
-console.log(calculator(30, 20, add));
-console.log(calculator(30, 20, sub));
-console.log(calculator(30, 20, multi));
-console.log(calculator(30, 20, div));
+// logic to calculate diameter
+
+const diameter = function(redius){
+    return 2 * redius;
+}
+
+// a reusable function to calculate area, diameter, etc
+
+const calculate = function(redius, logic){ 
+
+    const output = [];
+
+    for (i=0; i< redius.length; i++) {
+        output.push(logic(redius[i]));
+
+
+    }
+
+    return output;
+
+
+}
+
+console.log(calculate(redius, area));
+console.log(calculate(redius, diameter));
